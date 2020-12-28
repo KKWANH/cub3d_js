@@ -1,1 +1,1 @@
-# cub3d_js
+# cub3d_pikuma
