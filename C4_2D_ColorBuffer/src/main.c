@@ -431,6 +431,8 @@ void				render(void)
 	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 	SDL_RenderClear(renderer);
 	
+	
+
 	// clear the colorbuffer
 	renderColorBuffer();
 	clearColorBuffer(0xFF00EE30);

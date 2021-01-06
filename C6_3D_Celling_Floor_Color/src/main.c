@@ -364,10 +364,16 @@ void				generate3DProjection(void)
 		wallBottomPixel		= (WINDOW_HEIGHT / 2) + (wallStripHeight / 2);
 		wallBottomPixel		= wallBottomPixel > WINDOW_HEIGHT ? WINDOW_HEIGHT : wallBottomPixel;
 
+		// TODO: set the color of celling (천장)
+		for (int y=0; y<wallTopPixel; y++)
+			colorBuffer[(WINDOW_WIDTH * y) + i] = 0xFFB7FBFF;
 		// TODO: render the wall from wallTopPixel to wallBottomPixel
 		for (int y=wallTopPixel; y<wallBottomPixel; y++)
-			colorBuffer[(WINDOW_WIDTH * y) + i]
-							= rays[i].wasHitVertical ? 0xFFFFFFFF : 0xFFCCCCCC;
+			colorBuffer[(WINDOW_WIDTH * y) + i] = rays[i].wasHitVertical ? 0xFFFFFFFF : 0xFFCCCCCC;
+		// TODO: set the color of floor (바닥)
+		for (int y=wallBottomPixel; y<WINDOW_HEIGHT; y++)
+			colorBuffer[(WINDOW_WIDTH * y) + i] = 0xFF724945;
+		
 	}
 }
 
