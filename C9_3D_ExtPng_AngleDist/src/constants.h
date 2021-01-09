@@ -5,6 +5,7 @@
 #include		<SDL2/SDL.h>
 #include		<limits.h>
 #include		<stdlib.h>
+#include		<math.h>
 
 # define		FALSE					0
 # define		TRUE					1
@@ -20,11 +21,10 @@
 # define		WINDOW_WIDTH			(MAP_NUM_COLS * TILE_SIZE)
 # define		WINDOW_HEIGHT			(MAP_NUM_ROWS * TILE_SIZE)
 
-# define		TEXTURE_WIDTH			64
-# define		TEXTURE_HEIGHT			64
-
 # define		FOV_ANGLE				(60 * (PI / 180))
 # define		NUM_RAYS				WINDOW_WIDTH
+
+# define		DIST_PROJ_PLANE			((WINDOW_WIDTH / 2) / tan(FOV_ANGLE / 2))
 
 # define		FPS						50
 # define		FRAME_TIME_LENGTH		(1000 / FPS)
