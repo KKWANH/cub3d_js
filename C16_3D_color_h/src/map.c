@@ -44,7 +44,7 @@ void				renderMap(void)
 {
 	int				tileX;
 	int				tileY;
-	uint32_t		tileColor;
+	color_t			tileColor;
 	for (int i=0; i<MAP_NUM_ROWS; i++)
 	{
 		for (int j=0; j<MAP_NUM_COLS; j++)

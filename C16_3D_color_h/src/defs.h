@@ -23,4 +23,6 @@
 # define			FPS						500
 # define			FRAME_TIME_LENGTH		(1000 / FPS)
 
+# define			color_t					uint32_t
+
 #endif

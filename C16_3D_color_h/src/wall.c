@@ -38,9 +38,9 @@ void				renderWallProjection(void)
 		{
 			// TODO: calculate textureOffsetY
 			int				distanceFromTop	= (y + (wallStripHeight / 2)) - (WINDOW_HEIGHT / 2);
-			int			textureOffsetY	= distanceFromTop * ((float)texture_height / wallStripHeight);
+			int				textureOffsetY	= distanceFromTop * ((float)texture_height / wallStripHeight);
 
-			uint32_t		texelColor		= wallTextures[texNum].texture_buffer[(texture_width * textureOffsetY) + textureOffsetX];
+			color_t			texelColor		= wallTextures[texNum].texture_buffer[(texture_width * textureOffsetY) + textureOffsetX];
 			drawPixel(x, y, texelColor);
 		}
 
