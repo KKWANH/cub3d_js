@@ -4,9 +4,9 @@ ray_t				rays[NUM_RAYS];
 
 void				normalizeAngle(float *angle)
 {
-	*angle = remainder(*angle, 2*PI);
-	if (angle < 0)
-		*angle = (2 * PI) + *angle;
+	*angle = remainder(*angle, (PI * 2));
+	if (*angle < 0)
+		*angle = (PI * 2) + *angle;
 }
 
 float				distancePoints(float x1, float y1, float x2, float y2)
