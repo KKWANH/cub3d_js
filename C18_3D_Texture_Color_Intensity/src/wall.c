@@ -1,8 +1,17 @@
 #include			"wall.h"
 
+void				changeColorIntensity(color_t *color, float factor)
+{
+	color_t			a = (*color & 0xFF000000);
+	color_t			r = (*color & 0x00FF0000) * factor;
+	color_t			g = (*color & 0x0000FF00) * factor;
+	color_t			b = (*color & 0x000000FF) * factor;
+
+	*color = a | (r & 0x00FF0000) | (g & 0x0000FF00) | (b & 0x000000FF);
+}
+
 void				renderWallProjection(void)
 {
-
 	for (int x=0; x<NUM_RAYS; x++)
 	{
 		float			perpDistance		= rays[x].distance * cos(rays[x].rayAngle - player.rotationAngle);
@@ -41,6 +50,10 @@ void				renderWallProjection(void)
 			int				textureOffsetY	= distanceFromTop * ((float)texture_height / wallStripHeight);
 
 			color_t			texelColor		= wallTextures[texNum].texture_buffer[(texture_width * textureOffsetY) + textureOffsetX];
+
+			if (rays[x].wasHitVertical)
+				changeColorIntensity(&texelColor, 0.3);
+
 			drawPixel(x, y, texelColor);
 		}
 
