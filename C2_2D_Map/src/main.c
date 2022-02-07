@@ -65,8 +65,8 @@ void				setup(void)
 {
 	player.x				= WINDOW_WIDTH / 2;
     player.y				= WINDOW_HEIGHT / 2;
-    player.width			= 1;
-    player.height			= 1;
+    player.width			= 4;
+    player.height			= 4;
     player.turnDirection	= 0;
     player.walkDirection	= 0;
     player.rotationAngle	= PI / 2;
@@ -130,9 +130,9 @@ int					hasWallAt(float posX, float posY)
 // TODO: move my player
 void				movePlayer(float deltaTime)
 {
-	player.rotationAngle += player.turnDirection * player.turnSpeed * deltaTime;
+	player.rotationAngle += player.turnDirection * player.turnSpeed * 0.05;
 
-	float			moveStep 	= player.walkDirection * player.walkSpeed * deltaTime;
+	float			moveStep 	= player.walkDirection * player.walkSpeed * 0.05;
 	float			newPlayerX	= player.x + cos(player.rotationAngle) * moveStep;
 	float			newPlayerY	= player.y + sin(player.rotationAngle) * moveStep;
 
